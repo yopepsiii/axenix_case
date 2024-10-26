@@ -1,7 +1,6 @@
 import "./Panel.css"
 function Panel() {
     return (
-        <body>
             <div className="panel">
                 <div className="column">
                 <h1>Дайте деняг</h1>
@@ -29,7 +28,7 @@ function Panel() {
                 <img src="img/Train.svg" alt="" />
 
             </div>
-        </body>
+    
 
     )
 }
