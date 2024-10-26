@@ -1,0 +1,56 @@
+body{
+    background-color: #f3f1ed;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    align-items: center;
+}
+.panel {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7%;
+    padding-left: 5%;
+    padding-top: 2%;
+    background-color: white;
+    border-radius: 20px;
+    width: 55%;
+    height: 50%;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    display: flex;
+}
+.panel li{
+    display: flex;
+    padding-left: 0.5em;
+    padding-top: 10px;
+}
+
+.panel li::marker{
+    content: none;
+}
+.galka{
+    background-color: #f37022;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+.panel img{
+    display: flex;
+}
+input{
+    background-color: #f37022;
+    color: white;
+    width: 371px;
+    height: 66px;
+    border-radius: 24px;
+    margin-top: 20%;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 33px;
+}
