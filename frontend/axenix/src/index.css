@@ -17,6 +17,11 @@ code {
   margin: 0;
 }
 
-body{
+body {
   font-family: 'Montserrat Alternates', sans-serif;
+  background-color: #f3f1ed;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  align-items: center;
 }

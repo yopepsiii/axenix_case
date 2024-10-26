@@ -9,7 +9,7 @@ export default function Parametrs({date}){
     const [wagonTypes, setWagonTypes] = useState([]);
 
     const handlerClick = () => {
-        
+
         console.log(date, wagonTypes);
     }
 
