@@ -1,6 +1,4 @@
-import httpx
-from fastapi import APIRouter, HTTPException
-from starlette import status
+from fastapi import APIRouter
 
 from backend.config import settings
 from backend.enums import RequestType
@@ -17,7 +15,8 @@ async def register(reg_info: RegisterInfo):
 
     return await send_httpx_request(f'{settings.case_api_url}/register',
                                     request_type=RequestType.POST,
-                                    json=reg_info)
+                                    data=reg_info,
+                                    )
 
 
 @router.post('/login', response_model=Token)
@@ -26,7 +25,4 @@ async def login(login_info: LoginInfo):
 
     return await send_httpx_request(f'{settings.case_api_url}/login',
                                     request_type=RequestType.POST,
-                                    json=login_info)
-
-
-# todo: бля авторизация пользователя не нужна ливаем, ну тогда просто получаем токен и потом его юзаем
+                                    data=login_info)
