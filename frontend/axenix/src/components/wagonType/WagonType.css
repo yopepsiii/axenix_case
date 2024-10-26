@@ -1,0 +1,11 @@
+.wagonType ul li::marker{
+    content: none;
+}
+
+.wagonType h3{
+    margin: 20px;
+}
+
+.wagonType div{
+    margin: 10px;
+}
