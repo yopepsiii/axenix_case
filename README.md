@@ -2,6 +2,7 @@
 Сервис по бронированию билетов на поезд  
 
 ## Локальный запуск с помощью Docker
+0. Переключитесь на ветку `dev/backend` или `dev/frontend`
 1. Склонируйте репозиторий:
 ```bash
 git clone https://github.com/yopepsiii/axenix_case.git .
