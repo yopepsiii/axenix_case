@@ -1,0 +1,26 @@
+.pan1{
+    background-color: white;
+    border-radius: 10px;
+    width: 75%;
+    height: 45%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding-bottom: 2%;
+    display: flex;
+    flex-direction: column;
+}
+.pan1 p{
+    font-size:20px;
+    font-weight: 500;
+    padding: 15px;
+}
+.pan1 h1{
+    font-size: 32px;
+    font-weight: 500;
+    text-align: center;
+
+}
+.smallPan{
+    display: flex;
+}

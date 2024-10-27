@@ -1,0 +1,102 @@
+.panel {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5%;
+    padding-left: 5%;
+    padding-top: 2%;
+    background-color: white;
+    border-radius: 20px;
+    width: 75%;
+    height: calc(90vh);
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    display: flex;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.414);
+
+}
+
+.column {
+    margin-top: 4%;
+}
+
+.panel li {
+    display: flex;
+    padding-top: 10px;
+    font-size: 16px;
+    margin-top: 4%;
+
+}
+
+.panel li::marker {
+    content: none;
+
+
+}
+
+.panel h1 {
+    font-weight: 500;
+    font-size: 48px;
+}
+
+.smallText {
+    font-size: 16px;
+    margin-top: 5%;
+}
+
+.panel ul {
+    margin-top: 10%;
+}
+
+.galka img {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.414);
+}
+
+.box {
+    background-repeat: no-repeat;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+    
+}
+.box img{
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.414);
+}
+.box p{
+    margin-left: 40px;
+}
+
+.panel img {
+    display: flex;
+    z-index: 0;
+    position: relative;
+}
+
+.panel button {
+    /* position: relative; */
+    background-color: #f37022;
+    color: white;
+    width: 371px;
+    height: 66px;
+    border-radius: 30px;
+    margin-top: 20%;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 24px;
+    border: none;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.414);
+    z-index: 25;
+    transition: 0.4s;
+    margin-bottom: 20px;
+}
+.panel button:hover{
+    background-color: #5f308c;
+}
