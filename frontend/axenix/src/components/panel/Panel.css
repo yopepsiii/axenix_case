@@ -7,7 +7,7 @@
     background-color: white;
     border-radius: 20px;
     width: 75%;
-    height: 515px;
+    height: calc(90vh);
     font-family: "Montserrat Alternates", sans-serif;
     font-weight: 500;
     font-style: normal;
@@ -80,7 +80,7 @@
 }
 
 .panel button {
-    position: relative;
+    /* position: relative; */
     background-color: #f37022;
     color: white;
     width: 371px;
@@ -95,6 +95,7 @@
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.414);
     z-index: 25;
     transition: 0.4s;
+    margin-bottom: 20px;
 }
 .panel button:hover{
     background-color: #5f308c;

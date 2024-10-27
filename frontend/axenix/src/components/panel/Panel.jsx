@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom";
 
 import "./Panel.css"
 import Choice from ".././../pages/choice/Choice"
@@ -8,10 +8,10 @@ function Panel( props) {
     return (
         <div className="panel">
             <div className="column">
-                <h1>Дайте деняг</h1>
+                <h1>Сервис для заказа билетов</h1>
                 <div className="smallText">
-                    <p>Думайте текст сами, бла бла бла бла</p>
-                    <p>бла бла бла бла бла бла бла</p>
+                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                    <p>adipisicing elit. Quia ducimus laudantium.</p>
                 </div>
                 <ul>
                     <li className="galka">
@@ -30,7 +30,7 @@ function Panel( props) {
                         </div>
                         И то</li>
                 </ul>
-                <button>Найти</button>
+                <NavLink to={"parametrs"}><button>Найти</button></NavLink>  
 
                 {/* {
                     data.map((link) =>

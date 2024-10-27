@@ -1,10 +1,8 @@
+import { NavLink } from "react-router-dom"
 import "./Flight.css"
 function Flight() {
     return (
         <div className="flights">
-
-
-
             <div className="flightPanel">
                 <div className="par">Ростов-на-Дону &#8594; Россошь &#8594; Воронеж &#8594; Москва</div>
                 <div className="flightRows">
@@ -21,7 +19,7 @@ function Flight() {
                     <div className="lineVert"></div>
                     <div className="flightColumnForBuy">
                         <h1>1100 ₽</h1>
-                        <input type="submit" className="choicePlace" value="Выбрать место" />
+                        <NavLink to={"/placechoice"}><input type="submit" className="choicePlace" value="Выбрать место" /></NavLink> 
                     </div>
                 </div>
             </div>
@@ -42,7 +40,7 @@ function Flight() {
                     <div className="lineVert"></div>
                     <div className="flightColumnForBuy">
                         <h1>1100 ₽</h1>
-                        <input type="submit" className="choicePlace" value="Выбрать место" />
+                        <NavLink to={"/placechoice"}><input type="submit" className="choicePlace" value="Выбрать место" /></NavLink>
                     </div>
                 </div>
             </div>
