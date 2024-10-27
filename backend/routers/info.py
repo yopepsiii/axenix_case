@@ -41,7 +41,7 @@ async def get_filtred_trains(startpoint: str,
                 filtered_trains.append(train)
         return filtered_trains
     else:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail='По вашему запросов поездов не найдено.')
+        return []
 
 
 @router.get('/trains/{train_id}/filtered_wagons')
@@ -81,8 +81,7 @@ async def list_wagons(
                 result.append(wagon)
 
     else:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail='По вашему запросов вагонов не найдено.')
-
+        result = []
     return result
 
 
@@ -109,7 +108,8 @@ async def get_seats(wagon_id: int,
             seats = list(filter(lambda seat: seat['bookingStatus'] == bookingStatus, seats))
 
         seats = list(filter(lambda seat: price[0] <= seat['price'] <= price[1], seats))
-        return seats
 
     else:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail='По вашему запросов мест не найдено.')
+        seats = []
+    return seats
+

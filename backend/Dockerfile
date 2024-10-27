@@ -7,4 +7,4 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-CMD sh -c "uvicorn main:app --host 0.0.0.0 --port 8000 --reload & celery -A task_queue.celery_app worker --loglevel=info"
+CMD sh -c "uvicorn main:app --host 0.0.0.0 --port 8000 --reload & celery -A task_queue.celery_app worker --loglevel=info --concurrency=3"
