@@ -1,9 +1,6 @@
-from fastapi import Depends
-from fastapi.security import OAuth2PasswordBearer
-
-oauth2_password_bearer_scheme = OAuth2PasswordBearer(tokenUrl="login")
+from config import settings
 
 
-async def get_auth_headers(token: str = Depends(oauth2_password_bearer_scheme)):
-    headers = {"bearerAuth": token}
+async def get_auth_headers():
+    headers = {"bearerAuth": settings.axenix_api_key}
     return headers

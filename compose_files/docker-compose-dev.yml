@@ -1,0 +1,32 @@
+services:
+  api:
+    build:
+      context: ../backend
+    container_name: api
+    volumes:
+      - ../backend:/usr/src/AxenixCase/backend
+    env_file:
+      - ../backend/.env
+    depends_on:
+      - redis
+#  celery:
+#    container_name: task_queue
+#    build:
+#      context: ../backend/task_queue
+#    env_file:
+#      - ../backend/.env
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ../nginx/dev/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - api
+  redis:
+    image: redis:latest
+    container_name: redis
+    environment:
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}

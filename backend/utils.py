@@ -1,29 +1,33 @@
 from typing import Optional
 
 import httpx
-from fastapi import HTTPException, Depends
+from fastapi import HTTPException
 from starlette import status
 
-from backend.auth import get_auth_headers, oauth2_password_bearer_scheme
-from backend.enums import RequestType
+from config import settings
+from enums import RequestType
 
 
-async def send_httpx_request(url: str, request_type: RequestType, token: str = Depends(oauth2_password_bearer_scheme), data: Optional[dict] = None):
+async def send_httpx_request(url: str, request_type: RequestType, data: Optional[dict] = None, params: Optional[dict] = None):
     async with httpx.AsyncClient() as client:
-        client.headers['bearerAuth'] = token
+        client.headers['Authorization'] = f'Bearer {settings.axenix_api_key}'
+        print(f'{client.headers}\n\n')
+
         if request_type == RequestType.GET:
-            response = await client.get(url)
-            response_json = response.json()
+            response = await client.get(url, params=params)
+            if response.status_code == 200:
+                response_json = response.json()
 
-            if response_json.get('error'):
-                raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=response_json['error'])
+                return response_json
+            else:
+                raise HTTPException(status_code=response.status_code)
 
-            return response_json
         if request_type == RequestType.POST and data is not None:
-            response = await client.post(url, data=data)
-            response_json = response.json()
+            response = await client.post(url, data=data, params=params)
 
-            if response_json.get('error'):
-                raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=response_json['error'])
+            if response.status_code == 200:
+                response_json = response.json()
 
-            return response_json
+                return response_json
+            else:
+                raise HTTPException(status_code=response.status_code)
