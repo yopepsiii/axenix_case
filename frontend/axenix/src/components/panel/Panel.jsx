@@ -1,34 +1,47 @@
+import { NavLink } from "react-router-dom"
+
 import "./Panel.css"
-function Panel() {
+import Choice from ".././../pages/choice/Choice"
+
+function Panel( props) {
+    const { data } = props;
     return (
-            <div className="panel">
-                <div className="column">
+        <div className="panel">
+            <div className="column">
                 <h1>Дайте деняг</h1>
-                <p>Думайте текст сами, бла бла бла бла</p>
-                <p>бла бла бла бла бла бла бла</p>
+                <div className="smallText">
+                    <p>Думайте текст сами, бла бла бла бла</p>
+                    <p>бла бла бла бла бла бла бла</p>
+                </div>
                 <ul>
+                    <li className="galka">
+                        <div >
+                            <img src="/img/group 190.svg" alt="" />
+                        </div>
+                        Можем и то </li>
                     <li>
                         <div className="galka">
-                            <img src="img/Done.svg" alt="" />
-                        </div>
-                        Можем и то</li>
-                        <li>
-                        <div className="galka">
-                            <img src="img/Done.svg" alt="" />
+                            <img src="img/group 190.svg" alt="" />
                         </div>
                         И то</li>
-                        <li>
+                    <li>
                         <div className="galka">
-                            <img src="img/Done.svg" alt="" />
+                            <img src="/img/group 190.svg" alt="" />
                         </div>
                         И то</li>
                 </ul>
-                <input type="submit" value ="Найти" />
-                </div>
-                <img src="img/Train.svg" alt="" />
+                <button>Найти</button>
 
+                {/* {
+                    data.map((link) =>
+                    <NavLink to={link.path} key={link.path} className={({ isActive }) => (isActive ? "active" : "")}>{link.value}</NavLink>)
+                }
+                </div> */}
             </div>
-    
+            <img src="img/Group 197.svg" alt="" />
+
+        </div>
+
 
     )
 }
