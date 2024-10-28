@@ -11,7 +11,8 @@ from enums import RequestType
 async def send_httpx_request(url: str, request_type: RequestType, data: Optional[dict] = None, params: Optional[dict] = None):
     async with httpx.AsyncClient() as client:
         client.headers['Authorization'] = f'Bearer {settings.axenix_api_key}'
-        print(f'{client.headers}\n\n')
+
+        # print(f'\n\n\n{client.headers}\n\n\n')
 
         if request_type == RequestType.GET:
             response = await client.get(url, params=params)

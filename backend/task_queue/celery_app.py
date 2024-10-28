@@ -40,11 +40,12 @@ async def make_order(order: dict):
         if len(available_trains) > 0:
             print('\n\nНашелся нужный вам поезд, начинаю поиск по вагонам...\n\n')
             for train in available_trains:
-                wagons_ids = train['wagons_info']
+                wagons_info = train['wagons_info']
                 wagons = []
-                for wagon_id in wagons_ids:
-                    wagons.append(await send_httpx_request(url=f"{settings.case_api_url}/info/wagons/{wagon_id}",
-                                                           request_type=RequestType.GET))
+                for wagon in wagons_info:
+                    wagon_data = await send_httpx_request(url=f"{settings.case_api_url}/info/wagons/{wagon['wagon_id']}",
+                                                          request_type=RequestType.GET)
+                    wagons.append(wagon_data)
                 for wagon in wagons:
                     wagon['seats'] = list(filter(lambda seat: seat['bookingStatus'] != 'BOOKED', wagon['seats']))
                     if len(wagon['seats']) >= order['ticket_count']:
@@ -53,13 +54,13 @@ async def make_order(order: dict):
 
                         for seat in wagon['seats']:
                             if len(seat_ids) < order['ticket_count']:
-                                seat_ids.append(seat['id'])
+                                seat_ids.append(seat['seat_id'])
                             else:
                                 break
 
                         data = {
-                            "train_id": train['id'],
-                            "wagon_id": wagon['id'],
+                            "train_id": train['train_id'],
+                            "wagon_id": wagon['wagon_id'],
                             "seat_ids": seat_ids
                         }
                         print('\n\nУра! Мы нашли нужный вам билет(ы), сейчас забронируем...\n\n')
